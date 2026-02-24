@@ -70,7 +70,7 @@
   .full-moment-photo { width: 100%; aspect-ratio: 16/9; }
   #messages { background: var(--ink); color: var(--paper); padding: 48px 0; }
   .messages-wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
-  .msg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 24px; }
+  .msg-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 24px; }
   .msg-col { padding: 0 var(--col-gap); border-right: 1px solid rgba(240,235,224,0.12); }
   .msg-col:first-child { padding-left: 0; }
   .msg-col:last-child { padding-right: 0; border-right: none; }
@@ -128,7 +128,7 @@
     .gp.wide { grid-column: span 2; aspect-ratio: 16/9; }
     .mh-top { flex-direction: column; gap: 10px; align-items: center; text-align: center; }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     .g-strip, .g-strip-b { grid-template-columns: 1fr; }
     .gp.wide, .gp.tall { grid-column: span 1; aspect-ratio: 1; }
     .plum-band { flex-direction: column; gap: 4px; text-align: center; }
@@ -240,12 +240,12 @@
       <div class="mc-photo photo-block">
         <div class="ph-inner"><img src="eopics/family.jpeg" alt="Zane, Zuriel and the family"></div>
       </div>
-      <p class="caption">Then there were four — Zane, Zuriel, and a family made whole.</p>
+      <p class="caption">Then there were four — Zuriel, Zane, and a family made whole.</p>
       <div style="margin-top:12px;">
         <span class="dateline">The Family Years</span>
-        <h3 class="headline-md" style="margin-top:4px;">Zane, Zuriel &amp; Everything Changed</h3>
+        <h3 class="headline-md" style="margin-top:4px;">Zuriel,Zane  &amp; Everything Changed</h3>
         <hr class="rule-thin" style="margin:7px 0;">
-        <p class="body-copy">When uriel arrived, and then Zayne, the love between Ojuola and Efe did not divide — it multiplied. They did not just build a marriage. They built a home, a team, and two young lives that carry both of them in every smile.</p>
+        <p class="body-copy">When Zuriel arrived, and then Zayne, the love between Ojuola and Efe did not divide — it multiplied. They did not just build a marriage. They built a home, a team, and two young lives that carry both of them in every smile.</p>
       </div>
     </div>
   </div>
@@ -298,7 +298,7 @@
             <hr class="rule-thin" style="margin:7px 0;">
             <p class="body-copy drop-cap">Ojuola and Efe — Congratulations to my dear children. I have watched you come a long way with love for Jehovah, hard work and love for one another. May Jehovah continue to bless you and give you peace.</p>
             <div style="margin-top:14px; border-top:1px solid rgba(240,235,224,0.14); padding-top:10px;">
-              <p class="byline"><span id="name-display-1"></span> — Family</p>
+              <p class="byline"><span id="name-display-1"></span> —Mom</p>
             </div>
           </div>
         </div>
@@ -344,14 +344,41 @@
             <div class="unlock-stamp">&#10022; Unsealed</div>
             <h3 class="headline-sm">A Message From the Heart</h3>
             <hr class="rule-thin" style="margin:7px 0;">
-            <p class="body-copy">Eight years ago you started something. And every year since, you have added to it — layer by layer, quietly, without needing anyone to applaud. But today, we applaud. We see you. We celebrate you. We celebrate Zane and Zuriel, who are the living proof of everything you have built together. And we are so grateful that you found each other. Here is to forever.</p>
+            <p class="body-copy"> Dear brother Efe and Sister Ojay, what a journey! There have been highs and lows, good times and hard times. But that’s the beauty of true love; it grows, come what may. I pray this love continues to grow. You may be thousands of miles away from us, but we love you both very much. May Jehovah continue with you both and our boys. Thank you for giving us sweet Zuriel and Zayne. And Thank you for your generosity. You will always be a part of us. Cheers to eighth years and an eternity to go 🥂</p>
             <div style="margin-top:14px; border-top:1px solid rgba(240,235,224,0.14); padding-top:10px;">
-              <p class="byline"><span id="name-display-3"></span> — Family</p>
+              <p class="byline"><span id="name-display-3"></span> — Sister</p>
             </div>
           </div>
         </div>
       </div>
+<div class="msg-col reveal">
+        <div id="lock-4">
+          <div id="locked-4">
+            <p class="section-tag" style="background:rgba(155,91,138,0.35); margin-bottom:12px;">Reacted:👍</p>
+            <p class="body-copy" style="color:var(--paper-aged); font-style:italic; line-height:1.8; margin-bottom:18px;">"Your clue for person 4 goes here."</p>
+            <div class="guess-form">
+              <input type="text" class="guess-input" placeholder="Enter your name…" id="input-4" onkeydown="if(event.key==='Enter') checkGuess(4)">
+              <button class="guess-btn" onclick="checkGuess(4)">Unseal Letter</button>
+              <p class="guess-error" id="error-4"></p>
+            </div>
+          </div>
+          <div id="revealed-4" style="display:none;">
+            <div class="unlock-stamp">&#10022; Unsealed</div>
+            <h3 class="headline-sm">A Message From the Heart</h3>
+            <hr class="rule-thin" style="margin:7px 0;">
+            <p class="body-copy">Dear Children,
 
+It is a delight to mark another year in your relation as a couple, now a family. We thank Jehovah for the union and success so far. Please, keep it up intentionally.
+
+We are proud that you have not brought sny challenges to contend with.
+
+Stay close to Jehovah and the congretation. May you have peace and good health.</p>
+            <div style="margin-top:14px; border-top:1px solid rgba(240,235,224,0.14); padding-top:10px;">
+              <p class="byline"><span id="name-display-4"></span> — Dad</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="happy-anniversary reveal">Happy Anniversary, Ojuola &amp; Efe</div>
@@ -409,8 +436,9 @@
 
   const answers = {
     1: ['mama', 'mum', 'mom'],
-    2: ['ese'],
-    3: ['tega', 'grandma'],
+    2: ['ese', ''],
+    3: ['tega', ''],
+    4: ['daddy', ''],
   };
 
   const wrongResponses = [
