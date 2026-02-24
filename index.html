@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Anniversary Gazette — Eight Years</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=UnifrakturMaguntia&family=IM+Fell+English:ital@0;1&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+<style>
+  :root {
+    --ink: #0a0a0a; --ink-soft: #1a1a1a; --paper: #f0ebe0; --paper-dark: #e4ddd0;
+    --paper-aged: #d9d0bf; --white: #ffffff; --plum: #7B3F6E; --plum-light: #9B5B8A;
+    --col-gap: 24px; --serif: 'Playfair Display', Georgia, serif;
+    --fraktur: 'UnifrakturMaguntia', cursive; --fell: 'IM Fell English', serif; --sans: 'Jost', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--paper); color: var(--ink); font-family: var(--fell); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E"); pointer-events: none; z-index: 999; opacity: 0.5; }
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .rule-thick { border: none; border-top: 4px solid var(--ink); }
+  .rule-thin { border: none; border-top: 1px solid var(--ink); }
+  .rule-double { border: none; border-top: 4px double var(--ink); }
+  .plum-band { background: var(--plum); color: var(--white); padding: 9px 28px; display: flex; align-items: center; justify-content: space-between; font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; }
+  .masthead-title { font-family: var(--fraktur); font-size: clamp(3rem, 8vw, 6.5rem); color: var(--ink); text-align: center; line-height: 1; }
+  .headline-xl { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.05; text-transform: uppercase; letter-spacing: -0.02em; }
+  .headline-lg { font-family: var(--serif); font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 700; line-height: 1.1; text-transform: uppercase; }
+  .headline-md { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; line-height: 1.2; text-transform: uppercase; }
+  .headline-sm { font-family: var(--serif); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; line-height: 1.2; }
+  .deck { font-family: var(--fell); font-style: italic; font-size: 1rem; color: #333; line-height: 1.5; margin-top: 6px; }
+  .byline { font-family: var(--sans); font-size: 0.62rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; margin: 8px 0; }
+  .byline span { color: var(--plum); }
+  .dateline { font-family: var(--sans); font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; color: #666; }
+  .body-copy { font-family: var(--fell); font-size: 0.93rem; line-height: 1.75; text-align: justify; hyphens: auto; }
+  .body-copy + .body-copy { margin-top: 0.75em; }
+  .drop-cap::first-letter { font-family: var(--serif); font-size: 4rem; font-weight: 900; float: left; line-height: 0.75; margin: 8px 8px 0 0; color: var(--plum); }
+  .section-tag { font-family: var(--sans); font-size: 0.58rem; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; background: var(--plum); color: var(--white); display: inline-block; padding: 3px 10px; margin-bottom: 8px; }
+  .pull-quote { font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 2vw, 1.6rem); line-height: 1.4; text-align: center; border-top: 2px solid var(--plum); border-bottom: 2px solid var(--plum); padding: 18px 12px; margin: 20px 0; }
+  .photo-block { width: 100%; background: var(--ink-soft); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .photo-block img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(35%); transition: filter 0.4s; position: absolute; inset: 0; }
+  .photo-block:hover img { filter: grayscale(0%); }
+  .ph-inner { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 320px; position: relative; z-index: 1; }
+  .ph-icon { color: var(--paper-aged); font-size: 1.4rem; opacity: 0.4; }
+  .ph-label { font-family: var(--sans); font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--paper-aged); opacity: 0.45; }
+  .caption { font-family: var(--fell); font-style: italic; font-size: 0.76rem; color: #666; margin-top: 5px; line-height: 1.4; }
+  #masthead { max-width: 1160px; margin: 0 auto; padding: 20px 28px 0; }
+  .mh-top { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 10px; }
+  .mh-meta { font-family: var(--sans); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.9; color: #555; }
+  .mh-price { font-family: var(--serif); font-weight: 700; font-size: 0.72rem; color: var(--plum); border: 1px solid var(--plum); padding: 2px 8px; display: inline-block; margin-top: 4px; }
+  .mh-sub { font-family: var(--fell); font-style: italic; font-size: 0.88rem; text-align: center; color: #555; padding: 8px 0; }
+  .mh-nav { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; }
+  #front { max-width: 1160px; margin: 0 auto; padding: 0 28px 40px; }
+  .lead-grid { display: grid; grid-template-columns: 1fr 320px; gap: 0; padding: 24px 0; }
+  .lead-main { padding-right: var(--col-gap); border-right: 1px solid var(--ink); }
+  .lead-side { padding-left: var(--col-gap); }
+  .lead-photo { width: 100%; aspect-ratio: 16/10; margin: 14px 0 6px; }
+  #journey { max-width: 1160px; margin: 0 auto; padding: 0 28px 40px; }
+  .moments-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; padding: 20px 0; }
+  .mc { padding: 0 var(--col-gap); }
+  .mc:first-child { padding-left: 0; border-right: 1px solid var(--ink); }
+  .mc:nth-child(2) { border-right: 1px solid var(--ink); }
+  .mc:last-child { padding-right: 0; }
+  .mc-photo { width: 100%; aspect-ratio: 3/4; margin-bottom: 10px; }
+  .full-moment { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 24px 0; }
+  .full-moment-img { padding-right: var(--col-gap); border-right: 1px solid var(--ink); }
+  .full-moment-text { padding-left: var(--col-gap); }
+  .full-moment-photo { width: 100%; aspect-ratio: 16/9; }
+  #messages { background: var(--ink); color: var(--paper); padding: 48px 0; }
+  .messages-wrap { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+  .msg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 24px; }
+  .msg-col { padding: 0 var(--col-gap); border-right: 1px solid rgba(240,235,224,0.12); }
+  .msg-col:first-child { padding-left: 0; }
+  .msg-col:last-child { padding-right: 0; border-right: none; }
+  .msg-col .headline-sm, .msg-col .pull-quote { color: var(--paper); }
+  .msg-col .body-copy { color: var(--paper-aged); }
+  .msg-col .byline { color: var(--paper-dark); }
+  .msg-col .byline span { color: var(--plum-light); }
+  .msg-col .rule-thin { border-color: rgba(240,235,224,0.18); }
+  #gallery { max-width: 1160px; margin: 0 auto; padding: 0 28px 48px; }
+  .g-strip { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 6px; margin-top: 18px; }
+  .g-strip-b { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 6px; margin-top: 6px; }
+  .gp { position: relative; background: var(--ink-soft); overflow: hidden; cursor: pointer; aspect-ratio: 1; }
+  .gp.tall { aspect-ratio: 3/4; }
+  .gp.wide { aspect-ratio: 16/9; grid-column: span 2; }
+  .gp img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(60%); transition: filter 0.4s, transform 0.5s; position: absolute; inset: 0; }
+  .gp:hover img { filter: grayscale(0%); transform: scale(1.04); }
+  .g-hover { position: absolute; inset: 0; background: rgba(123,63,110,0); transition: background 0.3s; display: flex; align-items: center; justify-content: center; z-index: 2; }
+  .gp:hover .g-hover { background: rgba(123,63,110,0.18); }
+  .g-ph { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; gap: 8px; position: relative; z-index: 1; }
+  #closing { background: var(--plum); color: var(--white); padding: 72px 28px; text-align: center; }
+  .closing-fraktur { font-family: var(--fraktur); font-size: clamp(1.5rem, 3vw, 2.8rem); opacity: 0.28; margin-bottom: 18px; }
+  .closing-headline { font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 3rem); font-weight: 700; font-style: italic; line-height: 1.2; max-width: 720px; margin: 0 auto 20px; }
+  .closing-body { font-family: var(--fell); font-style: italic; font-size: 1rem; color: rgba(255,255,255,0.84); max-width: 520px; margin: 0 auto 28px; line-height: 1.85; }
+  .closing-sig { font-family: var(--fraktur); font-size: 2rem; color: rgba(255,255,255,0.55); }
+  footer { background: var(--ink); color: var(--paper-aged); padding: 22px 28px; }
+  .footer-inner { max-width: 1160px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; font-family: var(--sans); font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; flex-wrap: wrap; gap: 10px; }
+  .footer-inner span { color: var(--plum-light); }
+  /* GUESS MECHANIC */
+  .guess-form { display:flex; flex-direction:column; gap:10px; margin-top:4px; }
+  .guess-input { background: rgba(255,255,255,0.06); border: 1px solid rgba(155,91,138,0.4); color: var(--paper); font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.1em; padding: 10px 14px; outline: none; transition: border-color 0.3s; width: 100%; }
+  .guess-input::placeholder { color: rgba(217,208,191,0.4); }
+  .guess-input:focus { border-color: var(--plum-light); }
+  .guess-btn { background: var(--plum); color: var(--white); border: none; font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; padding: 10px 20px; cursor: pointer; transition: background 0.25s; align-self: flex-start; }
+  .guess-btn:hover { background: var(--plum-light); }
+  .guess-error { font-family: var(--fell); font-style: italic; font-size: 0.78rem; color: #c97a9a; min-height: 1.2em; margin-top: -4px; }
+  .msg-revealed { animation: fadeReveal 0.7s cubic-bezier(0.22,1,0.36,1) both; }
+  @keyframes fadeReveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .unlock-stamp { display: inline-block; border: 2px solid var(--plum-light); color: var(--plum-light); font-family: var(--serif); font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; padding: 3px 10px; margin-bottom: 10px; opacity: 0.7; }
+  /* HAPPY ANNIVERSARY */
+  .happy-anniversary { font-family: var(--fraktur); font-size: clamp(2rem, 5vw, 3.5rem); color: var(--paper); text-align: center; letter-spacing: 0.04em; border-top: 2px solid var(--plum-light); border-bottom: 2px solid var(--plum-light); padding: 20px 12px; margin: 40px auto 0; max-width: 780px; }
+  @media (max-width: 900px) {
+    .lead-grid { grid-template-columns: 1fr; }
+    .lead-main { border-right: none; padding-right: 0; border-bottom: 1px solid var(--ink); padding-bottom: 24px; }
+    .lead-side { padding-left: 0; padding-top: 24px; }
+    .moments-grid { grid-template-columns: 1fr; }
+    .mc { padding: 18px 0; border-right: none !important; border-bottom: 1px solid var(--ink); }
+    .mc:last-child { border-bottom: none; }
+    .full-moment { grid-template-columns: 1fr; }
+    .full-moment-img { border-right: none; padding-right: 0; border-bottom: 1px solid var(--ink); padding-bottom: 20px; }
+    .full-moment-text { padding-left: 0; padding-top: 20px; }
+    .msg-grid { grid-template-columns: 1fr; }
+    .msg-col { padding: 18px 0; border-right: none; border-bottom: 1px solid rgba(240,235,224,0.12); }
+    .msg-col:last-child { border-bottom: none; }
+    .g-strip, .g-strip-b { grid-template-columns: 1fr 1fr; }
+    .gp.wide { grid-column: span 2; aspect-ratio: 16/9; }
+    .mh-top { flex-direction: column; gap: 10px; align-items: center; text-align: center; }
+  }
+  @media (max-width: 600px) {
+    .g-strip, .g-strip-b { grid-template-columns: 1fr; }
+    .gp.wide, .gp.tall { grid-column: span 1; aspect-ratio: 1; }
+    .plum-band { flex-direction: column; gap: 4px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="plum-band">
+  <span>Est. 2018</span>
+  <span>&#10022; &nbsp; A Celebration of Eight Years &nbsp; &#10022;</span>
+  <span>February 24th, 2026</span>
+</div>
+
+<div id="masthead">
+  <div class="mh-top">
+    <div class="mh-meta">Vol. VIII, No. 1<br>Moncton, Canada<br>Tuesday, 24th February, 2026</div>
+    <div style="text-align:center; flex:1; padding:0 20px;"><div class="masthead-title">The Anniversary Gazette</div></div>
+    <div style="text-align:right;"><div class="mh-meta">Special Edition<br>Est. 2018</div><div class="mh-price">Priceless</div></div>
+  </div>
+  <hr class="rule-thick">
+  <p class="mh-sub">"Documenting a love that has stood the test of time — Eight years, one extraordinary story."</p>
+  <hr class="rule-thin">
+  <div class="mh-nav">
+    <span class="dateline">Front Page</span>
+    <span class="dateline">The Journey &nbsp;&middot;&nbsp; The Family &nbsp;&middot;&nbsp; The Album</span>
+    <span class="dateline">Collector's Edition</span>
+  </div>
+  <hr class="rule-thick">
+</div>
+
+<div id="front">
+  <div class="lead-grid reveal">
+    <div class="lead-main">
+      <span class="section-tag">Lead Story</span>
+      <h1 class="headline-xl">Ojuola &amp; Efe Mark Eight Remarkable Years</h1>
+      <p class="deck">In what family and friends are calling "an extraordinary union," the couple celebrates a milestone that has come to define a generation of love, patience, and quiet devotion — right here in Moncton.</p>
+      <div class="byline">By <span>The Family</span> &nbsp;&middot;&nbsp; Special Correspondent</div>
+      <hr class="rule-thin" style="margin:8px 0;">
+      <div class="lead-photo photo-block">
+        <div class="ph-inner"><img src="eopics\weddingpic.jpeg" alt="Ojuola and Efe"></div>
+      </div>
+      <p class="caption">Ojuola and Efe — eight years and still the most beautiful thing in the room. — Family Archive</p>
+      <hr class="rule-thin" style="margin:12px 0;">
+      <div style="columns:2; column-gap:28px; column-rule:1px solid var(--ink);">
+        <p class="body-copy drop-cap">Eight years ago, two people found each other and quietly decided that the world made more sense together than apart. What followed was not the dramatic, headline-grabbing kind of love — it was something far more rare. It was the kind of love you build with your hands: steady, deliberate, and deepened by every season that passes.</p>
+        <p class="body-copy">From their traditional wedding day — surrounded by colour, family, and the kind of joy that only comes from knowing you have made the right choice — to the life they have since built in Moncton, Ojuola and Efe have never stopped growing toward each other. They brought two beautiful boys, Zane and Zuriel, into the world, and in doing so, turned a love story into a family legacy.</p>
+        <p class="body-copy">Those who know them well speak of this couple with a particular kind of reverence. "They just make sense together," one family member noted.</p>
+        <p class="body-copy">Eight years. Not a milestone to simply celebrate — one to study, to learn from, and to honour with the full weight of family love behind it. This edition is that honour.</p>
+      </div>
+    </div>
+    <div class="lead-side">
+      <span class="section-tag">Also Inside</span>
+      <hr class="rule-thin" style="margin:8px 0 12px;">
+      <h3 class="headline-sm">The Journey — Page 2</h3>
+      <p class="body-copy" style="font-size:0.83rem; margin:6px 0 14px;">Four chapters from eight years of Ojuola and Efe — from the traditional wedding to the family they have built.</p>
+      <hr class="rule-thin" style="margin:0 0 12px;">
+      <h3 class="headline-sm">Words From The Family — Page 3</h3>
+      <p class="body-copy" style="font-size:0.83rem; margin:6px 0 14px;">Those closest to the couple share their most heartfelt tributes in this special collector's edition.</p>
+      <hr class="rule-thin" style="margin:0 0 12px;">
+      <h3 class="headline-sm">The Album — Page 4</h3>
+      <p class="body-copy" style="font-size:0.83rem; margin:6px 0 18px;">A curated visual record of eight years of a life beautifully and unapologetically shared.</p>
+      <hr class="rule-thin" style="margin:0 0 16px;">
+      <div class="photo-block" style="aspect-ratio:3/4;">
+        <div class="ph-inner"><img src="eopics\upcloseselfie.jpeg" alt="Ojuola and Efe"></div>
+      </div>
+      <p class="caption">A moment between two people who have made a life out of moments like this.</p>
+      <div class="pull-quote">"Eight years of choosing each other, every single day."</div>
+    </div>
+  </div>
+</div>
+
+<div class="plum-band"><span>Page 2</span><span>&#10022; &nbsp; The Journey &nbsp; &#10022;</span><span>Eight Years In Review</span></div>
+
+<div id="journey">
+  <div style="padding:20px 0 14px;" class="reveal">
+    <span class="section-tag">The Journey</span>
+    <h2 class="headline-lg" style="margin-top:6px;">Four Chapters of a Love Story</h2>
+    <p class="deck">Selected dispatches from eight years of a love story worth telling — from the very beginning.</p>
+  </div>
+  <hr class="rule-double">
+
+  <div class="moments-grid">
+    <div class="mc reveal">
+      <div class="mc-photo photo-block">
+        <div class="ph-inner"><img src="eopics\trad.jpeg"></div>
+      </div>
+      <p class="caption">The day it became official — traditional wedding, 2018.</p>
+      <div style="margin-top:12px;">
+        <span class="dateline">2018</span>
+        <h3 class="headline-md" style="margin-top:4px;">The Day It Became Official</h3>
+        <hr class="rule-thin" style="margin:7px 0;">
+        <p class="body-copy">Surrounded by family, colour, and a joy that filled every corner of the room, Ojuola and Efe said yes — the traditional way, with the full blessing of those who love them most. This was the day a love story became a covenant, and everyone present knew exactly what they were witnessing.</p>
+      </div>
+    </div>
+    <div class="mc reveal">
+      <div class="mc-photo photo-block">
+<div class="ph-inner"><img src="eopics/inthecar.jpeg" alt="Ojuola and Efe — early days"></div>
+      </div>
+      <p class="caption">The early days — just the two of them, figuring it all out.</p>
+      <div style="margin-top:12px;">
+        <span class="dateline">Early Years</span>
+        <h3 class="headline-md" style="margin-top:4px;">Before It Was Easy</h3>
+        <hr class="rule-thin" style="margin:7px 0;">
+        <p class="body-copy">Every great love has its early chapter — the one before the routines settle in, before everything has a name. For Ojuola and Efe, this was the time of discovery: learning each other's silences, building their language, choosing to stay when staying was still a decision and not yet a reflex.</p>
+      </div>
+    </div>
+    <div class="mc reveal">
+      <div class="mc-photo photo-block">
+        <div class="ph-inner"><img src="eopics/family.jpeg" alt="Zane, Zuriel and the family"></div>
+      </div>
+      <p class="caption">Then there were four — Zane, Zuriel, and a family made whole.</p>
+      <div style="margin-top:12px;">
+        <span class="dateline">The Family Years</span>
+        <h3 class="headline-md" style="margin-top:4px;">Zane, Zuriel &amp; Everything Changed</h3>
+        <hr class="rule-thin" style="margin:7px 0;">
+        <p class="body-copy">When uriel arrived, and then Zayne, the love between Ojuola and Efe did not divide — it multiplied. They did not just build a marriage. They built a home, a team, and two young lives that carry both of them in every smile.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule-double">
+
+  <div class="full-moment reveal">
+    <div class="full-moment-img">
+      <div class="full-moment-photo photo-block">
+<div class="ph-inner"><img src="eopics/flowerbackground.jpeg" alt="Ojuola and Efe — today"></div>
+      </div>
+      <p class="caption">Moncton, 2026 — the family, eight years strong.</p>
+    </div>
+    <div class="full-moment-text">
+      <span class="dateline">Today — Moncton, Canada</span>
+      <h3 class="headline-lg" style="margin-top:4px;">Eight Years On, Still Growing</h3>
+      <hr class="rule-thin" style="margin:10px 0;">
+      <p class="body-copy drop-cap">Today, far from where it all began but never far from the people who love them, Ojuola and Efe stand as proof that love is not a feeling you fall into — it is a decision you wake up and make, over and over, until it becomes the shape of your life. Eight years of that decision has built something remarkable: a partnership, a family, a story the whole family is proud to be part of.</p>
+      <p class="body-copy" style="margin-top:10px;">Zane and Zuriel will grow up knowing what real love looks like — because they live inside it every single day. That is the greatest thing Ojuola and Efe have done. Not just for each other, but for all of us.</p>
+    </div>
+  </div>
+</div>
+
+<div id="messages">
+  <div class="messages-wrap">
+    <div style="text-align:center;" class="reveal">
+      <div class="plum-band" style="background:rgba(255,255,255,0.08); margin-bottom:18px; justify-content:center; gap:20px;">
+        <span>Page 3</span><span>&#10022; &nbsp; Words From The Family &nbsp; &#10022;</span><span>Tribute Edition</span>
+      </div>
+      <h2 class="headline-lg" style="color:var(--paper); font-style:italic;">Letters to the Couple</h2>
+      <p class="deck" style="color:var(--paper-aged);">Each letter is sealed. Read your clue — if it sounds like you, enter your name to unlock your message.</p>
+    </div>
+    <hr style="border-color:rgba(240,235,224,0.14); margin:18px 0;">
+    <div class="msg-grid">
+
+      <div class="msg-col reveal">
+        <div id="lock-1">
+          <div id="locked-1">
+            <p class="section-tag" style="background:rgba(155,91,138,0.35); margin-bottom:12px;">Your Clue</p>
+            <p class="body-copy" style="color:var(--paper-aged); font-style:italic; line-height:1.8; margin-bottom:18px;">"The one who always has food ready before anyone asks. The kitchen is your love language, and this family has eaten well because of it."</p>
+            <div class="guess-form">
+              <input type="text" class="guess-input" placeholder="Enter your name…" id="input-1" onkeydown="if(event.key==='Enter') checkGuess(1)">
+              <button class="guess-btn" onclick="checkGuess(1)">Unseal Letter</button>
+              <p class="guess-error" id="error-1"></p>
+            </div>
+          </div>
+          <div id="revealed-1" style="display:none;">
+            <div class="unlock-stamp">&#10022; Unsealed</div>
+            <h3 class="headline-sm">A Message From the Family</h3>
+            <hr class="rule-thin" style="margin:7px 0;">
+            <p class="body-copy drop-cap">Ojuola and Efe — Congratulations to my dear children. I have watched you come a long way with love for Jehovah, hard work and love for one another. May Jehovah continue to bless you and give you peace.</p>
+            <div style="margin-top:14px; border-top:1px solid rgba(240,235,224,0.14); padding-top:10px;">
+              <p class="byline"><span id="name-display-1"></span> — Family</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="msg-col reveal">
+        <div id="lock-2">
+          <div id="locked-2">
+            <p class="section-tag" style="background:rgba(155,91,138,0.35); margin-bottom:12px;">Your Clue</p>
+            <p class="body-copy" style="color:var(--paper-aged); font-style:italic; line-height:1.8; margin-bottom:18px;">"If you need something done, tell &ldquo;&nbsp;&nbsp;&nbsp;&rdquo; — if you want to carry a movement, tell &ldquo;&nbsp;&nbsp;&nbsp;&rdquo;"</p>
+            <div class="guess-form">
+              <input type="text" class="guess-input" placeholder="Enter your name…" id="input-2" onkeydown="if(event.key==='Enter') checkGuess(2)">
+              <button class="guess-btn" onclick="checkGuess(2)">Unseal Letter</button>
+              <p class="guess-error" id="error-2"></p>
+            </div>
+          </div>
+          <div id="revealed-2" style="display:none;">
+            <div class="unlock-stamp">&#10022; Unsealed</div>
+            <h3 class="headline-sm">A Message From Ese</h3>
+            <hr class="rule-thin" style="margin:7px 0;">
+            <p class="body-copy">Congratulations brother Efe and OJ on your anniversary. Thank you for being a part of our family — you are very important to us. You are so far away but we feel you so close because you make it your duty to make us part of your lives. Jehovah will continue to keep your love. Genuine love is scarcer by the day, please let nothing come in between you two. Not pride, money, family, children, friends, jobs — nothing. Because you both are yours alone in the most special kind of way. I love you guys.</p>
+            <p class="body-copy" style="margin-top:10px;">Bro Efe, my easy going big bro — I would not have asked for another bro to manage my coconut head. Thank you for all the gifts to me and my kids despite the tight economy.</p>
+            <p class="body-copy" style="margin-top:10px;">OJ, my classmate turned sister — thank you for steadying my big bro. A wife is VERY important in a home. Thank you for birthing and caring for the boys. E no easy.</p>
+            <div style="margin-top:14px; border-top:1px solid rgba(240,235,224,0.14); padding-top:10px;">
+              <p class="byline"><span id="name-display-2"></span> — Sister</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="msg-col reveal">
+        <div id="lock-3">
+          <div id="locked-3">
+            <p class="section-tag" style="background:rgba(155,91,138,0.35); margin-bottom:12px;">Your Clue</p>
+            <p class="body-copy" style="color:var(--paper-aged); font-style:italic; line-height:1.8; margin-bottom:18px;">"The person whose battery ends the call."</p>
+            <div class="guess-form">
+              <input type="text" class="guess-input" placeholder="Enter your name…" id="input-3" onkeydown="if(event.key==='Enter') checkGuess(3)">
+              <button class="guess-btn" onclick="checkGuess(3)">Unseal Letter</button>
+              <p class="guess-error" id="error-3"></p>
+            </div>
+          </div>
+          <div id="revealed-3" style="display:none;">
+            <div class="unlock-stamp">&#10022; Unsealed</div>
+            <h3 class="headline-sm">A Message From the Heart</h3>
+            <hr class="rule-thin" style="margin:7px 0;">
+            <p class="body-copy">Eight years ago you started something. And every year since, you have added to it — layer by layer, quietly, without needing anyone to applaud. But today, we applaud. We see you. We celebrate you. We celebrate Zane and Zuriel, who are the living proof of everything you have built together. And we are so grateful that you found each other. Here is to forever.</p>
+            <div style="margin-top:14px; border-top:1px solid rgba(240,235,224,0.14); padding-top:10px;">
+              <p class="byline"><span id="name-display-3"></span> — Family</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="happy-anniversary reveal">Happy Anniversary, Ojuola &amp; Efe</div>
+  </div>
+</div>
+
+<div class="plum-band"><span>Page 4</span><span>&#10022; &nbsp; The Album &nbsp; &#10022;</span><span>Eight Years, Captured</span></div>
+
+<div id="gallery">
+  <div style="padding:20px 0 14px;" class="reveal">
+    <span class="section-tag">The Album</span>
+    <h2 class="headline-lg" style="margin-top:6px;">A Life Beautifully Shared</h2>
+    <p class="deck">Eight years of moments, captured. A visual record of an extraordinary love story — Moncton and beyond.</p>
+  </div>
+  <hr class="rule-double">
+ <div class="g-strip reveal">
+    <div class="gp"><a href="eopics/kiyutee.jpeg" class="glightbox" data-gallery="album"><img src="eopics/kiyutee.jpeg" alt="Photo 1"><div class="g-hover"></div></a></div>
+    <div class="gp tall"><a href="eopics/upcloseselfie.jpeg" class="glightbox" data-gallery="album"><img src="eopics/upcloseselfie.jpeg" alt="Photo 2"><div class="g-hover"></div></a></div>
+    <div class="gp"><a href="eopics/serve.jpeg" class="glightbox" data-gallery="album"><img src="eopics/serve.jpeg" alt="Photo 3"><div class="g-hover"></div></a></div>
+</div>
+<div class="g-strip-b reveal">
+    <div class="gp wide"><a href="eopics/inthecar2.jpeg" class="glightbox" data-gallery="album"><img src="eopics/inthecar2.jpeg" alt="Photo 4"><div class="g-hover"></div></a></div>
+    <div class="gp"><a href="eopics/eiffeltower.jpeg" class="glightbox" data-gallery="album"><img src="eopics/eiffeltower.jpeg" alt="Photo 5"><div class="g-hover"></div></a></div>
+    <div class="gp"><a href="eopics/2025.jpeg" class="glightbox" data-gallery="album"><img src="eopics/2025.jpeg" alt="Photo 6"><div class="g-hover"></div></a></div>
+</div>
+  <p class="caption" style="margin-top:10px;">Selected photographs from 2018 – 2026. All images courtesy of the family archive.</p>
+</div>
+
+<div id="closing">
+  <div class="reveal">
+    <div class="closing-fraktur">The Anniversary Gazette</div>
+    <hr style="border-color:rgba(255,255,255,0.18); max-width:380px; margin:0 auto 24px;">
+    <h2 class="closing-headline">"Here's to the love that started everything — and to everything still to come."</h2>
+    <p class="closing-body">Ojuola and Efe — you have built something that most people only dream about. Eight years of real, honest, unshakeable love. And Zane and Zuriel — two beautiful boys who carry both of you in everything they are. The family has watched. We have celebrated every quiet moment with you, even the ones you did not know we noticed. We love you more than this page can hold. Here is to forever.</p>
+    <hr style="border-color:rgba(255,255,255,0.18); max-width:380px; margin:0 auto 22px;">
+    <div class="closing-sig">With love, The Family</div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span>The Anniversary Gazette &nbsp;&middot;&nbsp; <span>Vol. VIII</span></span>
+    <span>&#10022;</span>
+    <span>February 24th, 2026 &nbsp;&middot;&nbsp; <span>Collector's Edition</span></span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const answers = {
+    1: ['mama', 'mum', 'mom'],
+    2: ['ese'],
+    3: ['tega', 'grandma'],
+  };
+
+  const wrongResponses = [
+    "Hmm… that doesn't sound right. Try again.",
+    "Not quite. Read the clue again.",
+    "That's not the one. Think harder.",
+    "Close, maybe? But no. Try again.",
+    "The clue knows who you are. Do you?",
+  ];
+
+  function checkGuess(id) {
+    const input = document.getElementById('input-' + id);
+    const error = document.getElementById('error-' + id);
+    const val = input.value.trim().toLowerCase();
+    if (!val) { error.textContent = "Type your name first."; return; }
+    const correct = (answers[id] || []).map(a => a.toLowerCase());
+    if (correct.includes(val)) {
+      document.getElementById('locked-' + id).style.display = 'none';
+      const revealed = document.getElementById('revealed-' + id);
+      revealed.style.display = 'block';
+      revealed.classList.add('msg-revealed');
+      const display = input.value.trim();
+      document.getElementById('name-display-' + id).textContent = display.charAt(0).toUpperCase() + display.slice(1);
+      error.textContent = '';
+    } else {
+      error.textContent = wrongResponses[Math.floor(Math.random() * wrongResponses.length)];
+      input.style.borderColor = 'rgba(201, 122, 154, 0.6)';
+      setTimeout(() => { input.style.borderColor = ''; }, 1200);
+    }
+  }
+</script>
+</body>
+</html>
